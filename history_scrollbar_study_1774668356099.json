@@ -1,0 +1,251 @@
+{
+  "exportedAt": "2026-03-28T03:25:56.099Z",
+  "participantId": "p1",
+  "counterbalancedOrder": "BA",
+  "events": [
+    {
+      "t": 1774668187673,
+      "type": "study_start",
+      "participantId": "p1",
+      "order": "BA",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "studyDesign": "return_navigation_ab",
+      "studyGoal": "After two guided visits, participants return to their own saved scroll positions. Condition B shows history markers; A does not. Compare time, accuracy, and perceived necessity on return tasks."
+    },
+    {
+      "t": 1774668187682,
+      "type": "block_start",
+      "condition": "B",
+      "blockIndex": 0
+    },
+    {
+      "t": 1774668187687,
+      "type": "task_start",
+      "condition": "B",
+      "taskId": 1,
+      "taskKind": "visit",
+      "targetRatio": 0.22
+    },
+    {
+      "t": 1774668222814,
+      "type": "task_complete",
+      "condition": "B",
+      "taskId": 1,
+      "taskKind": "visit",
+      "targetRatio": 0.22,
+      "tolerance": 0.1,
+      "finalRatio": 0.17436292115614846,
+      "correct": true,
+      "durationMs": 34942,
+      "scrollEvents": 116,
+      "directionChanges": 2
+    },
+    {
+      "t": 1774668222814,
+      "type": "task_start",
+      "condition": "B",
+      "taskId": 2,
+      "taskKind": "visit",
+      "targetRatio": 0.82
+    },
+    {
+      "t": 1774668234263,
+      "type": "task_complete",
+      "condition": "B",
+      "taskId": 2,
+      "taskKind": "visit",
+      "targetRatio": 0.82,
+      "tolerance": 0.1,
+      "finalRatio": 0.9079014879425347,
+      "correct": true,
+      "durationMs": 11449,
+      "scrollEvents": 162,
+      "directionChanges": 0
+    },
+    {
+      "t": 1774668234263,
+      "type": "task_start",
+      "condition": "B",
+      "taskId": 3,
+      "taskKind": "return",
+      "targetRatio": 0.17436292115614846,
+      "returnToTaskId": 1
+    },
+    {
+      "t": 1774668261280,
+      "type": "task_complete",
+      "condition": "B",
+      "taskId": 3,
+      "taskKind": "return",
+      "targetRatio": 0.17436292115614846,
+      "tolerance": 0.07,
+      "finalRatio": 0.1685479733196511,
+      "correct": true,
+      "durationMs": 27017,
+      "scrollEvents": 1,
+      "directionChanges": 0,
+      "returnToTaskId": 1
+    },
+    {
+      "t": 1774668261280,
+      "type": "task_start",
+      "condition": "B",
+      "taskId": 4,
+      "taskKind": "return",
+      "targetRatio": 0.9079014879425347,
+      "returnToTaskId": 2
+    },
+    {
+      "t": 1774668274663,
+      "type": "task_complete",
+      "condition": "B",
+      "taskId": 4,
+      "taskKind": "return",
+      "targetRatio": 0.9079014879425347,
+      "tolerance": 0.08,
+      "finalRatio": 0.9079014879425347,
+      "correct": true,
+      "durationMs": 13383,
+      "scrollEvents": 1,
+      "directionChanges": 0,
+      "returnToTaskId": 2
+    },
+    {
+      "t": 1774668274663,
+      "type": "block_end",
+      "condition": "B",
+      "blockIndex": 0
+    },
+    {
+      "t": 1774668295015,
+      "type": "likert_submitted",
+      "condition": "B",
+      "blockIndex": 0,
+      "responses": {
+        "ease": 5,
+        "necessity": 4,
+        "wantFeature": 5
+      }
+    },
+    {
+      "t": 1774668295026,
+      "type": "block_start",
+      "condition": "A",
+      "blockIndex": 1
+    },
+    {
+      "t": 1774668295026,
+      "type": "task_start",
+      "condition": "A",
+      "taskId": 1,
+      "taskKind": "visit",
+      "targetRatio": 0.22
+    },
+    {
+      "t": 1774668312198,
+      "type": "task_complete",
+      "condition": "A",
+      "taskId": 1,
+      "taskKind": "visit",
+      "targetRatio": 0.22,
+      "tolerance": 0.1,
+      "finalRatio": 0.15527384207473693,
+      "correct": true,
+      "durationMs": 17165,
+      "scrollEvents": 53,
+      "directionChanges": 0
+    },
+    {
+      "t": 1774668312198,
+      "type": "task_start",
+      "condition": "A",
+      "taskId": 2,
+      "taskKind": "visit",
+      "targetRatio": 0.82
+    },
+    {
+      "t": 1774668321416,
+      "type": "task_complete",
+      "condition": "A",
+      "taskId": 2,
+      "taskKind": "visit",
+      "targetRatio": 0.82,
+      "tolerance": 0.1,
+      "finalRatio": 0.8927003065705527,
+      "correct": true,
+      "durationMs": 9218,
+      "scrollEvents": 137,
+      "directionChanges": 0
+    },
+    {
+      "t": 1774668321416,
+      "type": "task_start",
+      "condition": "A",
+      "taskId": 3,
+      "taskKind": "return",
+      "targetRatio": 0.15527384207473693,
+      "returnToTaskId": 1
+    },
+    {
+      "t": 1774668330398,
+      "type": "task_complete",
+      "condition": "A",
+      "taskId": 3,
+      "taskKind": "return",
+      "targetRatio": 0.15527384207473693,
+      "tolerance": 0.07,
+      "finalRatio": 0.06040268456375839,
+      "correct": false,
+      "durationMs": 8981,
+      "scrollEvents": 135,
+      "directionChanges": 1,
+      "returnToTaskId": 1
+    },
+    {
+      "t": 1774668330398,
+      "type": "task_start",
+      "condition": "A",
+      "taskId": 4,
+      "taskKind": "return",
+      "targetRatio": 0.8927003065705527,
+      "returnToTaskId": 2
+    },
+    {
+      "t": 1774668339232,
+      "type": "task_complete",
+      "condition": "A",
+      "taskId": 4,
+      "taskKind": "return",
+      "targetRatio": 0.8927003065705527,
+      "tolerance": 0.08,
+      "finalRatio": 0.9120059656972409,
+      "correct": true,
+      "durationMs": 8834,
+      "scrollEvents": 157,
+      "directionChanges": 2,
+      "returnToTaskId": 2
+    },
+    {
+      "t": 1774668339232,
+      "type": "block_end",
+      "condition": "A",
+      "blockIndex": 1
+    },
+    {
+      "t": 1774668353099,
+      "type": "likert_submitted",
+      "condition": "A",
+      "blockIndex": 1,
+      "responses": {
+        "ease": 1,
+        "necessity": 5,
+        "wantFeature": 5
+      }
+    },
+    {
+      "t": 1774668353099,
+      "type": "study_complete",
+      "order": "BA"
+    }
+  ]
+}

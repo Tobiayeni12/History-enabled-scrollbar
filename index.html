@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History-enabled Scrollbar (Milestone 2)</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__left">
+        <div class="brand">History-enabled Scrollbar</div>
+        <div class="subtitle">Return-navigation study: standard vs history-enabled scrollbar (A/B)</div>
+      </div>
+
+      <div class="controls" aria-label="Prototype controls">
+        <div id="historyControls" class="controls__group">
+          <label class="control">
+            <span class="control__label">History size (N)</span>
+            <input id="historySize" type="range" min="5" max="30" step="1" value="12" />
+            <span id="historySizeValue" class="control__value">12</span>
+          </label>
+
+          <button id="clearHistory" class="button" type="button">Clear history</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section id="viewer" class="viewer" aria-label="Scrollable document viewer">
+        <div id="scrollRoot" class="scrollRoot" tabindex="0" aria-label="Document image">
+          <img
+            src="./document.png"
+            alt="Long-form document used for the history-enabled scrollbar prototype"
+            class="docImage"
+          />
+        </div>
+
+        <aside class="overlay" id="historyOverlay" aria-label="History scrollbar overlay">
+          <div class="overlay__track" id="historyTrack" aria-hidden="true">
+            <div class="overlay__thumb" id="thumb" aria-hidden="true"></div>
+            <div class="overlay__markers" id="markers" aria-hidden="true"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="experiment" id="experimentPanel" aria-label="User study controls">
+        <h2 class="experiment__heading">User study (Milestone 2)</h2>
+        <p class="experiment__intro">
+          This study tests <strong>returning to places you already scrolled to</strong>. Each block has two
+          guided visits (your exact position is saved), then two tasks where you must <strong>go back</strong> to
+          those saved spots. <strong>Condition A</strong> is a normal scrollbar only; <strong>Condition B</strong>
+          adds the history overlay (markers you can click). Order is counterbalanced (A→B or B→A). After each
+          block, three short ratings. Then download the JSON for analysis.
+        </p>
+
+        <div id="experimentIdle" class="experiment__block">
+          <label class="field">
+            <span class="field__label">Participant ID (optional)</span>
+            <input id="participantId" type="text" maxlength="64" placeholder="e.g. P01" autocomplete="off" />
+          </label>
+          <button id="btnStartStudy" class="button button--primary" type="button">Start study</button>
+        </div>
+
+        <div id="experimentActive" class="experiment__block" hidden>
+          <p id="conditionBadge" class="conditionBadge" role="status"></p>
+          <p id="taskProgress" class="taskProgress"></p>
+          <p id="taskInstruction" class="taskInstruction"></p>
+          <div class="experiment__actions">
+            <button id="btnCompleteTask" class="button button--primary" type="button">Complete task</button>
+            <button id="btnAbandonStudy" class="button" type="button">Abandon study</button>
+          </div>
+        </div>
+
+        <div id="experimentSurvey" class="experiment__block" hidden>
+          <p id="surveyIntro" class="surveyIntro" role="status"></p>
+          <fieldset class="likert">
+            <legend>Jumping back to spots I had already scrolled to felt easy with this scrollbar.</legend>
+            <div class="likert__row" data-likert="ease"></div>
+          </fieldset>
+          <fieldset class="likert">
+            <legend>This scrollbar felt necessary to complete the return tasks without excessive trial and error.</legend>
+            <div class="likert__row" data-likert="necessity"></div>
+          </fieldset>
+          <fieldset class="likert">
+            <legend>I would want scroll history on the scrollbar for long documents where I move back and forth.</legend>
+            <div class="likert__row" data-likert="wantFeature"></div>
+          </fieldset>
+          <button id="btnSurveyContinue" class="button button--primary" type="button">Submit answers and continue</button>
+        </div>
+
+        <div id="experimentDone" class="experiment__block experiment__done" hidden>
+          <p id="doneMessage" class="doneMessage">
+            Both conditions and both surveys are complete. Save the file below and send it to the researcher for analysis.
+          </p>
+          <button id="btnDownloadStudy" class="button button--primary" type="button">Download results (JSON)</button>
+        </div>
+
+        <p class="experiment__footer">
+          <button id="btnExportFreeLog" class="button" type="button">Export in-memory log (abandoned session)</button>
+        </p>
+      </section>
+    </main>
+
+    <div id="markerTooltip" class="markerTooltip" role="status" aria-live="polite" hidden></div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
